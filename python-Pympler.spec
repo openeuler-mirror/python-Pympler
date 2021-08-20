@@ -2,7 +2,7 @@
 %global         pname Pympler
 Name:           python-%{pname}
 Version:        0.9
-Release:        1
+Release:        2
 Summary:        A development tool to measure, monitor and analyze the memory behavior of Python objects.
 License:        Apache-2.0 and MIT
 URL:            https://github.com/pympler/pympler
@@ -54,7 +54,7 @@ line monitoring of a Python application and the class tracker provides off-line
 analysis of the lifetime of selected Python objects.
 
 %prep
-%autosetup -n Pympler-0.9 -S git
+%autosetup -n Pympler-0.9 -p1
 
 %build
 %py3_build
@@ -99,5 +99,8 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 0.9-2
+- DESC: delete -S git from %autosetup
+
 * Thu Jul 29 2021 OpenStack_SIG <openstack@openeuler.org> - 0.9-1
 - Package Spec generate
