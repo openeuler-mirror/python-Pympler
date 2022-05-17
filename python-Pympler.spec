@@ -2,11 +2,12 @@
 %global         pname Pympler
 Name:           python-%{pname}
 Version:        0.9
-Release:        2
+Release:        3
 Summary:        A development tool to measure, monitor and analyze the memory behavior of Python objects.
 License:        Apache-2.0 and MIT
 URL:            https://github.com/pympler/pympler
 Source0:        https://files.pythonhosted.org/packages/e8/e2/2f3a086701bb62b1c478a3921836271177838a3c98cdc6b82c3bb36d3854/Pympler-0.9.tar.gz
+Patch0:         fix-collections.MutableMapping-no-support-for-python-3.10.patch
 BuildArch:      noarch
 %description
 Pympler is a development tool to measure, monitor and analyze the memory
@@ -99,6 +100,9 @@ mv %{buildroot}/doclist.lst .
 %{_docdir}/*
 
 %changelog
+* Tue May 17 2022 xigaoxinyan <xigaoxinyan@h-partners.com> - 0.9-3
+- Fix collections.MutableMapping no support for python3.10
+
 * Fri Jul 30 2021 chenyanpanHW <chenyanpan@huawei.com> - 0.9-2
 - DESC: delete -S git from %autosetup
 
